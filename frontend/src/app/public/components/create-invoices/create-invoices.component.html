@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <mat-card-title class="col-lg-3 offset-lg-">
+        <span class="fs-4">{{titulo | uppercase}}</span>
+      </mat-card-title>
+      <form class=" mt-4 " [formGroup]="newInvoiceForm" (ngSubmit)="newInvoice()">
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Nombre del cliente:</mat-label>
+            <mat-select formControlName="nameCliente" required>
+              <mat-option *ngFor="let positionOption of idClientOptions | async" [value]="positionOption.id">
+                {{positionOption.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-card-actions>
+          <div class="buttons float-end">
+            <button mat-button [ngStyle]="{'background':'#A93226', 'color':'#ffff'}"
+              (click)="cancelar()">Cancelar</button>
+          </div>
+          <button mat-button [ngStyle]="{'background':'#27AE60', 'color':'#ffff'}"
+            [disabled]="!this.newInvoiceForm.valid">Siguiente</button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <mat-card-title class="col-lg offset-lg-3">
+        <span class="fs-4">{{titulo | uppercase}}</span>
+      </mat-card-title>
+      <form class=" mt-4 " [formGroup]="newBrandForm" (ngSubmit)="newBrand()">
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre del producto:</mat-label>
+            <input matInput formControlName="name" required>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Valor del producto:</mat-label>
+            <input matInput formControlName="price">
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Stock:</mat-label>
+            <input matInput formControlName="stock">
+          </mat-form-field>
+        </div>
+        <mat-card-actions>
+          <div class="buttons float-end">
+            <button mat-button [ngStyle]="{'background':'#A93226', 'color':'#ffff'}"
+              (click)="cancelar()">Cancelar</button>
+          </div>
+          <button mat-button [ngStyle]="{'background':'#27AE60', 'color':'#ffff'}"
+            [disabled]="!this.newBrandForm.valid">Guardar</button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </div>
+</div>

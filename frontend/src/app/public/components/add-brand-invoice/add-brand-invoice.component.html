@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <mat-card-title class="col-lg-4 offset-lg-3">
+        <span class="fs-4">{{titulo | uppercase}}</span>
+      </mat-card-title>
+      <form class=" mt-4 " [formGroup]="addBrandInvoiceForm" (ngSubmit)="addBrandInvoice()">
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Productos:</mat-label>
+            <mat-select formControlName="nameBrand" required>
+              <mat-option *ngFor="let positionOption of idBrandOptions | async" [value]="positionOption.id"
+                (click)="idBrand(positionOption)">
+                {{positionOption.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="addBrandInvoice-container">
+          <mat-form-field class="addBrandInvoice-full-width" appearance="fill">
+            <mat-label>Cantidad:</mat-label>
+            <input type="number" matInput formControlName="cantidad" [(ngModel)]='cantidadBrand' required>
+          </mat-form-field>
+          <mat-form-field class="addBrandInvoice-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Valor del producto:</mat-label>
+            <input matInput formControlName="total" (click)="onKeyUp()">
+          </mat-form-field>
+        </div>
+        <div class="addBrandInvoice-container">
+          <mat-label class="text-danger">{{text}}</mat-label>
+        </div>
+        <mat-card-actions class="md-5">
+          <div class="buttons float-end">
+            <button mat-button [ngStyle]="{'background':'#A93226', 'color':'#ffff'}"
+              (click)="cancelar()">Cancelar</button>
+          </div>
+          <button mat-button [ngStyle]="{'background':'#27AE60', 'color':'#ffff'}"
+            [disabled]="!this.addBrandInvoiceForm.valid">Guardar</button>
+        </mat-card-actions>
+      </form>
+    </div>
+  </div>
+</div>

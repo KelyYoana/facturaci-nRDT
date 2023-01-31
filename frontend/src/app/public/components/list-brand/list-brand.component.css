@@ -1,0 +1,36 @@
+.fas {
+  cursor: pointer;
+  margin-left: 7px;
+  margin-top: 7px;
+  font-size: 18px;
+}
+
+.row {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.optiones {
+  color: #9DA6BB;
+  margin-right: 15px
+}
+
+.form-control-feedback {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.form-control {
+  padding-left: 30px !important;
+}
+
+.mat-column-demo-symbol {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table th, td {
+  text-align: center;
+}

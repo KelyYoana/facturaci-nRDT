@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-11 offset-lg-1">
+      <mat-card-title class="col-lg-6 offset-lg-4">
+        <span class="fs-4">{{titulo | uppercase}}</span>
+      </mat-card-title>
+      <form class="mt-4" [formGroup]="newClientForm" (ngSubmit)="newClient()">
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre:</mat-label>
+            <input matInput formControlName="name" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Apellido:</mat-label>
+            <input matInput formControlName="surname">
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>Fecha de nacimiento:</mat-label>
+            <input matInput formControlName="inputDateBirth" placeholder="mm/dd/yyyyy">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Dirección:</mat-label>
+            <input matInput formControlName="inputDirection" required>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Celular:</mat-label>
+            <input matInput formControlName="inputPhone" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
+            <mat-label>E-mail:</mat-label>
+            <input matInput formControlName="inputEmail">
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Categoría:</mat-label>
+            <input matInput formControlName="inputCategory" required>
+          </mat-form-field>
+        </div>
+        <div class="example-container-buttons">
+          <mat-card-actions>
+            <button class="float-end" mat-button [ngStyle]="{'background':'#A93226', 'color':'#ffff'}"
+              (click)="cancelar()">Cancelar</button>
+            <button mat-button [ngStyle]="{'background':'#27AE60', 'color':'#ffff'}"
+              [disabled]="!this.newClientForm.valid">Guardar</button>
+          </mat-card-actions>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
