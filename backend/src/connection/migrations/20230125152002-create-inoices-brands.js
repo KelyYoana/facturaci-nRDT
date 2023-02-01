@@ -28,7 +28,7 @@ module.exports = {
       productQuantity:{
         type: Sequelize.STRING
       },
-      tota l:{
+      total:{
         type: Sequelize.STRING
       },
       createdAt: {

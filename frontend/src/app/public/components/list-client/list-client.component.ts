@@ -79,10 +79,6 @@ export class ListClientComponent implements OnInit {
     } )
   }
 
-  deleteUser ( element: any ) {
-    console.log( element )
-  }
-
   applyFilter ( event: Event ) {
     const filterValue = ( event.target as HTMLInputElement ).value
     this.dataSource.filter = filterValue.trim().toLowerCase()

@@ -15,13 +15,13 @@ module.exports = {
 
     await queryInterface.bulkInsert('clients',[
       {
-        name:'Nombre',
-        surName:'Apellido',
-        direction:'xxxxxxxx',
-        dateBirth:'12-00-000',
-        phone:'xxxxxx',
-        email:'xxxx@xxx.com',
-        category:'xxx',
+        name:'Kely Yoana',
+        surName:'Jimenez Gomez',
+        direction:'Sangil Santander',
+        dateBirth:'11-18-1995',
+        phone:'3184711268',
+        email:'kelyjimenez18@hotmail.com',
+        category:'1',
         createdAt: new Date(),
         updatedAt: new Date()
       }
